@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{{block "title" . }}{{ .Site.Title }}{{end}}</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+        <!-- IndieWeb Stuff -->
+        <link rel="authorization_endpoint" href="https://indieauth.com/auth">
+        <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+        <link rel="microsub" href="https://aperture.p3k.io/microsub/205">
+    </head>
+
+    <body>
+    {{ partial "header.html" . }}
+
+    <div>
+        {{ block "main" . }} {{ end }}
+    </div>
+
+    {{ partial "footer.html" . }}
+    </body>
+</html>

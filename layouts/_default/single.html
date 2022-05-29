@@ -1,0 +1,41 @@
+{{ define "main" }}
+<article class="h-entry">
+		<header>
+				<a class="u-url" href="{{ .Permalink }}">
+						<h3 class="p-name">{{ .Title }}</h3>
+        </a>
+        <p>by
+						<a class="p-author h-card" href="{{ .Site.Author.url }}">
+                {{ .Site.Author.name }}
+            </a> on
+            <time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04" }}">
+                {{ .Date.Format "Monday, January 2, 2006" }}
+            </time> in
+						{{ range .Params.categories }}
+								<a
+										href="{{ "/categories/" | relLangURL }}{{ . | urlize | lower }}"
+										rel="category"
+										class="p-category"
+										title="{{ . }}">
+										{{ . }}
+								</a>
+						{{ end  }}
+        </p>
+    </header>
+    <div class="e-content">
+        {{ .Content }}
+    </div>
+	  <nav class="tags">
+				<strong>Tags:</strong>
+				{{ range .Params.tags }}
+						<a
+								href="{{ "/tags/" | relLangURL }}{{ . | urlize | lower }}"
+								rel="tag"
+								class="p-category"
+								title="{{ . }}">
+								#{{ . }}
+						</a>
+				{{ end  }}
+	  </nav>
+</article>
+{{ end }}

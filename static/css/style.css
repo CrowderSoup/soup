@@ -1,0 +1,27 @@
+:root {
+  --accent: #2EC838;
+}
+
+a {
+	text-decoration: none;
+}
+
+article a h3 {
+	margin: 0;
+}
+
+article.h-entry {
+	margin: 1rem auto;
+}
+
+.elsewhere-icon {
+	fill: var(--accent);
+}
+
+nav.paginator {
+	text-align: center;
+}
+
+nav.tags {
+	margin: 0.5rem 0 0 0;
+}

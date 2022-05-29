@@ -1,0 +1,13 @@
+name = "Soup"
+license = "MIT"
+licenselink = "https://github.com/crowdersoup/soup"
+description = "Simple, Semantic, IndieWeb friendly theme"
+homepage = "https://github.com/crowdersoup/soup/"
+demosite = "https://crowdersoup.com"
+tags = ["blog", "minimal", "indieweb"]
+features = []
+min_version = "0.54.0"
+
+[author]
+  name = "CrowderSoup"
+  homepage = "https://crowdersoup.com"

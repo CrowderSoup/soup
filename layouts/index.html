@@ -1,0 +1,60 @@
+{{ define "main" }}
+<div class="block h-card">
+  <section class="author">
+    {{- with .Site.Author.avatar }}
+	<aside>
+	  <figure class="author-image-container">
+		<img
+		  class="u-photo"
+		  alt="{{ $.Site.Author.name }} avatar"
+		  src="{{ $.Site.Author.avatar | relURL }}"
+		  height="90"
+		  width="90" />
+	  </figure>
+	</aside>
+    {{- end }}
+    <div class="author-box">
+      <div class="author-intro">
+        Hi, I'm&nbsp;
+        <a class="p-name u-url" href="{{ "" | relLangURL }}">
+          {{ .Site.Author.name }}
+        </a>.&nbsp;
+        Or&mdash;if you know me online&mdash;<span class="p-nickname">{{ .Site.Author.nickname }}</span>.
+      </div>
+      <div class="author-bio p-note">
+        {{ .Content }}
+      </div>
+    </div>
+	{{- if .Site.Params.elsewhere }}
+	  <div class="elsewhere">
+		{{- range sort .Site.Data.social.icons "weight" }}
+		  {{- if isset $.Site.Params.elsewhere .id }}
+			<a
+			  class="elsewhere-link"
+			  target="_blank"
+			  rel="me"
+			  href="{{ printf .url (index $.Site.Params.elsewhere .id) }}">
+			  {{ partial .icon (dict "class" "elsewhere-icon") }}
+			</a>
+		  {{- end }}
+		{{- end }}
+	  </div>
+	{{- end }}
+  </section>
+</div>
+<div class="h-feed">
+  <h3>Recent Blog Posts</h3>
+  <ul>
+    {{ range first 5 (where (where .Site.Pages "Section" "posts") "Params.menu" "!=" "main") }}
+    <li class="h-entry">
+      <time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04" }}">
+        {{ .Date.Format "2006-01-02" }}
+      </time>
+      <a class="u-url" href="{{ .Permalink }}">
+        <span class="p-name">{{ .Title }}</span>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

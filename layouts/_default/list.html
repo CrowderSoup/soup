@@ -1,0 +1,69 @@
+{{ define "main" }}
+{{ $currentPage := . }}
+
+<div class="h-feed">
+    <h2 class="p-name"><a class="u-url" href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    <div class="list-page-header p-summary">
+        {{ .Content }}
+    </div>
+
+    {{ range .Paginator.Pages }}
+        <article class="h-entry">
+            <header>
+                <a class="u-url" href="{{ .Permalink }}">
+                    <h3 class="p-name">{{ .Title }}</h3>
+                </a>
+                <p>by
+                    <a class="p-author h-card" href="{{ $currentPage.Site.Author.url }}">
+                        {{ $currentPage.Site.Author.name }}
+                    </a> on
+                    <time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04" }}">
+                        {{ .Date.Format "Monday, January 2, 2006" }}
+                    </time> in
+		    {{ range .Params.categories }}
+			<a
+			    href="{{ "/categories/" | relLangURL }}{{ . | urlize | lower }}"
+			    rel="category"
+			    class="p-category"
+			    title="{{ . }}">
+			    {{ . }}
+			</a>
+		    {{ end  }}
+                </p>
+            </header>
+            <p class="p-summary">
+                {{ .Summary }}
+            </p>
+            <a href="{{ .Permalink }}" class="u-url">Read more...</a>
+	    <nav class="tags">
+		<strong>Tags:</strong>
+		{{ range .Params.tags }}
+		    <a
+			href="{{ "/tags/" | relLangURL }}{{ . | urlize | lower }}"
+			rel="tag"
+			class="p-category"
+			title="{{ . }}">
+			#{{ . }}
+		    </a>
+		{{ end  }}
+	    </nav>
+        </article>
+    {{ end }}
+</div>
+
+<nav class="paginator">
+    {{if .Paginator.HasPrev}}
+        <span class="pagination-item">
+            <a href="{{ .Paginator.Prev.URL }}">&larr; Newer</a>
+        </span>
+    {{end}}
+    <span class="pagination-item-spacer">
+        Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}
+    </span>
+    {{if .Paginator.HasNext}}
+        <span class="pagination-item">
+            <a href="{{ .Paginator.Next.URL }}">Older &rarr;</a>
+        </span>
+    {{end}}
+</nav>
+{{ end }}
