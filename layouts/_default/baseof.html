@@ -8,9 +8,15 @@
         <link rel="stylesheet" type="text/css" href="/css/style.css" />
 
         <!-- IndieWeb Stuff -->
-        <link rel="authorization_endpoint" href="https://indieauth.com/auth">
-        <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
-        <link rel="microsub" href="https://aperture.p3k.io/microsub/205">
+        {{ with .Params.authorization_endpoint }}
+        <link rel="authorization_endpoint" href="{{ . }}">
+        {{ end }}
+        {{ with .Params.token_endpoint }}
+        <link rel="token_endpoint" href="{{ . }}">
+        {{ end }}
+        {{ with .Params.microsub }}
+        <link rel="microsub" href="{{ . }}">
+        {{ end }}
     </head>
 
     <body>
