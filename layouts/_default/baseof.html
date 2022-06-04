@@ -8,13 +8,13 @@
         <link rel="stylesheet" type="text/css" href="/css/style.css" />
 
         <!-- IndieWeb Stuff -->
-        {{ with .Params.authorization_endpoint }}
+        {{ with .Site.Params.authorization_endpoint }}
         <link rel="authorization_endpoint" href="{{ . }}">
         {{ end }}
-        {{ with .Params.token_endpoint }}
+        {{ with .Site.Params.token_endpoint }}
         <link rel="token_endpoint" href="{{ . }}">
         {{ end }}
-        {{ with .Params.microsub }}
+        {{ with .Site.Params.microsub }}
         <link rel="microsub" href="{{ . }}">
         {{ end }}
     </head>
