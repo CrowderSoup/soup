@@ -6,11 +6,11 @@
   <nav class="main-nav">
     <ul>
       {{ range .Site.Menus.main }}
-        <a
-		  class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}"
-		  href="{{ .URL }}">
-		  {{ .Pre }}<span>{{ .Name }}</span>
-		</a>
+      <a
+				class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}"
+				href="{{ .URL }}">
+				{{ .Pre }}<span>{{ .Name }}</span>
+			</a>
       {{ end }}
     </ul>
   </nav>

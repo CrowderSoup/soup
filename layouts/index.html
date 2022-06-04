@@ -3,14 +3,14 @@
   <section class="author">
     {{- with .Site.Author.avatar }}
 	<aside>
-	  <figure class="author-image-container">
+		<figure class="author-image-container">
 		<img
-		  class="u-photo"
-		  alt="{{ $.Site.Author.name }} avatar"
-		  src="{{ $.Site.Author.avatar | relURL }}"
-		  height="90"
-		  width="90" />
-	  </figure>
+			class="u-photo"
+			alt="{{ $.Site.Author.name }} avatar"
+			src="{{ $.Site.Author.avatar | relURL }}"
+			height="90"
+			width="90" />
+		</figure>
 	</aside>
     {{- end }}
     <div class="author-box">
@@ -26,19 +26,19 @@
       </div>
     </div>
 	{{- if .Site.Params.elsewhere }}
-	  <div class="elsewhere">
+		<div class="elsewhere">
 		{{- range sort .Site.Data.social.icons "weight" }}
-		  {{- if isset $.Site.Params.elsewhere .id }}
+			{{- if isset $.Site.Params.elsewhere .id }}
 			<a
-			  class="elsewhere-link"
-			  target="_blank"
-			  rel="me"
-			  href="{{ printf .url (index $.Site.Params.elsewhere .id) }}">
-			  {{ partial .icon (dict "class" "elsewhere-icon") }}
+				class="elsewhere-link"
+				target="_blank"
+				rel="me"
+				href="{{ printf .url (index $.Site.Params.elsewhere .id) }}">
+				{{ partial .icon (dict "class" "elsewhere-icon") }}
 			</a>
-		  {{- end }}
+			{{- end }}
 		{{- end }}
-	  </div>
+		</div>
 	{{- end }}
   </section>
 </div>

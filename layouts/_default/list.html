@@ -20,33 +20,33 @@
                     <time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04" }}">
                         {{ .Date.Format "Monday, January 2, 2006" }}
                     </time> in
-		    {{ range .Params.categories }}
-			<a
-			    href="{{ "/categories/" | relLangURL }}{{ . | urlize | lower }}"
-			    rel="category"
-			    class="p-category"
-			    title="{{ . }}">
-			    {{ . }}
-			</a>
-		    {{ end  }}
+                    {{ range .Params.categories }}
+                        <a
+                            href="{{ "/categories/" | relLangURL }}{{ . | urlize | lower }}"
+                            rel="category"
+                            class="p-category"
+                            title="{{ . }}">
+                            {{ . }}
+                        </a>
+                    {{ end  }}
                 </p>
             </header>
             <p class="p-summary">
                 {{ .Summary }}
             </p>
             <a href="{{ .Permalink }}" class="u-url">Read more...</a>
-	    <nav class="tags">
-		<strong>Tags:</strong>
-		{{ range .Params.tags }}
-		    <a
-			href="{{ "/tags/" | relLangURL }}{{ . | urlize | lower }}"
-			rel="tag"
-			class="p-category"
-			title="{{ . }}">
-			#{{ . }}
-		    </a>
-		{{ end  }}
-	    </nav>
+            <nav class="tags">
+                <strong>Tags:</strong>
+                {{ range .Params.tags }}
+                    <a
+                        href="{{ "/tags/" | relLangURL }}{{ . | urlize | lower }}"
+                        rel="tag"
+                        class="p-category"
+                        title="{{ . }}">
+                        #{{ . }}
+                    </a>
+                {{ end  }}
+            </nav>
         </article>
     {{ end }}
 </div>

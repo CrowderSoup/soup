@@ -3,25 +3,25 @@
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 article a h3 {
-	margin: 0;
+  margin: 0;
 }
 
 article.h-entry {
-	margin: 1rem auto;
+  margin: 1rem auto;
 }
 
 .elsewhere-icon {
-	fill: var(--accent);
+  fill: var(--accent);
 }
 
 nav.paginator {
-	text-align: center;
+  text-align: center;
 }
 
 nav.tags {
-	margin: 0.5rem 0 0 0;
+  margin: 0.5rem 0 0 0;
 }
