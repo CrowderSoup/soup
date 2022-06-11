@@ -7,6 +7,11 @@
         <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
         <link rel="stylesheet" type="text/css" href="/css/style.css" />
 
+
+        {{ range .AlternativeOutputFormats -}}
+            {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+        {{ end -}}
+
         <!-- IndieWeb Stuff -->
         {{ with .Site.Params.authorization_endpoint }}
         <link rel="authorization_endpoint" href="{{ . }}">
