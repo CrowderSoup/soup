@@ -1,9 +1,26 @@
 [[icons]]
-  id = "email"
-  url = "mailto:%s"
-  icon = "svg/email.svg"
-  class = "u-email"
+  id = "instagram"
+  url = "https://www.instagram.com/%s"
+  icon = "svg/instagram.svg"
+  weight = 0
+
+[[icons]]
+  id = "youtube"
+  url = "https://www.youtube.com/@%s"
+  icon = "svg/youtube.svg"
   weight = 10
+
+[[icons]]
+  id = "tiktok"
+  url = "https://www.tiktok.com/@%s"
+  icon = "svg/tiktok.svg"
+  weight = 15
+
+[[icons]]
+  id = "mastodon"
+  url = "%s"
+  icon = "svg/mastodon.svg"
+  weight = 20
 
 [[icons]]
   id = "twitter"
@@ -12,37 +29,32 @@
   weight = 30
 
 [[icons]]
-  id = "telegram"
-  url = "https://t.me/%s"
-  icon = "svg/telegram.svg"
+  id = "github"
+  url = "https://github.com/%s"
+  icon = "svg/github.svg"
   weight = 40
 
 [[icons]]
-  id = "instagram"
-  url = "https://www.instagram.com/%s"
-  icon = "svg/instagram.svg"
+  id = "gitlab"
+  url = "https://gitlab.com/%s"
+  icon = "svg/gitlab.svg"
   weight = 50
 
 [[icons]]
   id = "linkedin"
   url = "https://linkedin.com/in/%s"
   icon = "svg/linkedin.svg"
+  weight = 60
+
+[[icons]]
+  id = "email"
+  url = "mailto:%s"
+  icon = "svg/email.svg"
+  class = "u-email"
+  weight = 70
+
+[[icons]]
+  id = "telegram"
+  url = "https://t.me/%s"
+  icon = "svg/telegram.svg"
   weight = 80
-
-[[icons]]
-  id = "github"
-  url = "https://github.com/%s"
-  icon = "svg/github.svg"
-  weight = 90
-
-[[icons]]
-  id = "gitlab"
-  url = "https://gitlab.com/%s"
-  icon = "svg/gitlab.svg"
-  weight = 100
-
-[[icons]]
-  id = "mastodon"
-  url = "%s"
-  icon = "svg/mastodon.svg"
-  weight = 120
