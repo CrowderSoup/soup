@@ -5,6 +5,12 @@
   weight = 0
 
 [[icons]]
+  id = "bluesky"
+  url = "https://staging.bsky.app/profile/%s"
+  icon = "svg/bluesky.svg"
+  weight = 5
+
+[[icons]]
   id = "youtube"
   url = "https://www.youtube.com/@%s"
   icon = "svg/youtube.svg"
