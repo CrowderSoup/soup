@@ -25,3 +25,8 @@ nav.paginator {
 nav.tags {
   margin: 0.5rem 0 0 0;
 }
+
+.author-image-container .u-photo {
+	display: block;
+	margin: 5px auto;
+}
